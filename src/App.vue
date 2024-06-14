@@ -19,7 +19,7 @@
     guitarras.value = db
     guitarra.value = db[3]
 
-    const carritoStorage = localStorage.getItem('carrito')
+    const carritoStorage = db.getItem('carrito')
     if(carritoStorage) {
       carrito.value = JSON.parse(carritoStorage)
     }
@@ -54,7 +54,7 @@
   const eliminarProducto = (id) => {
     carrito.value = carrito.value.filter(producto => producto.id !== id)
   }
-
+  
   const vaciarCarrito = () => {
     carrito.value = []
   }
